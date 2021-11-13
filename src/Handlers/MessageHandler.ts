@@ -76,10 +76,10 @@ export default class MessageHandler {
         if (state) return void M.reply(`❌ This command is disabled${state.reason ? ` for ${state.reason}` : ''}`)
         if (!command.config?.dm && M.chat === 'dm') return void M.reply('This command can only be used in groups')
         if (command.config?.modsOnly && !this.client.config.mods?.includes(M.sender.jid)) {
-            return void M.reply(`Only MODS are allowed to use this command`)
+            return void M.reply(`Ahhh Fool ,Only the owner of the bot is allowed to use this command`)
         }
         if (command.config?.adminOnly && !M.sender.isAdmin)
-            return void M.reply(`Only admins are allowed to use this command`)
+            return void M.reply(`Know your place Fool .Only admins are allowed to use this command`)
         try {
             await command.run(M, this.parseArgs(args))
             if (command.config.baseXp) {
