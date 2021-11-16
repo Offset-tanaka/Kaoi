@@ -13,7 +13,7 @@ export default class Command extends BaseCommand {
 		super(client, handler, {
 			command: "getgif",
 			description: "Will give you random gif of the given search term.",
-			category: "utils",
+			category: "educative",
 			usage: `${client.config.prefix}getgif [term]`,
 			aliases: ["gif"],
 			baseXp: 40,
