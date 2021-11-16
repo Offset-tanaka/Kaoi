@@ -69,12 +69,12 @@ export default class MessageHandler {
                 sender.username
             )} in ${chalk.cyanBright(groupMetadata?.subject || 'DM')}`
         )
-        if (!command) return void M.reply('No Command Such Command Baka have you never seen someone use the command #help.')
+        if (!command) return void M.reply('No  Such Command Baka!! *have you never seen someone use the command #help*.')
         const user = await this.client.getUser(M.sender.jid)
         if (user.ban) return void M.reply("You're Banned from using commands.")
         const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
         if (state) return void M.reply(`Hey dude❌ This command is disabled${state.reason ? ` for ${state.reason}` : ''}`)
-        if (!command.config?.dm && M.chat === 'dm') return void M.reply('This command can only be used in groups')
+        if (!command.config?.dm && M.chat === 'dm') return void M.reply('*Commands cannot be used in direct messages* Send a message without a prefix to have a chat')
         if (command.config?.modsOnly && !this.client.config.mods?.includes(M.sender.jid)) {
             return void M.reply(`Ahhh Fool ,Only the owner of the bot is allowed to use this command`)
         }
